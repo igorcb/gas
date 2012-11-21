@@ -1,3 +1,20 @@
-<%= provide(:title, 'Launches')  %>
-<h1>Launches</h1>
-<p>Find me in app/views/launches/show.html.erb</p>
+<%= provide(:title, 'Launche')  %>
+<h1>Launche</h1>
+
+<p>
+ <b>Date: </b> <%= @launche.date_launche.to_s %>
+
+</p>
+
+<p>
+  <b>Miles: </b> <%= @launche.miles.to_s %>
+</p>
+
+<p>
+  <b>Price: </b> <%= @launche.price.to_s %>
+</p>
+
+<p>
+  <b>Total: </b> <%= @launche.total.to_s %>
+</p>
+

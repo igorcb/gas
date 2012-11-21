@@ -1,5 +1,5 @@
-<% provide(:title, 'New Launche') %>
-<h1>New Launche</h1>
+<% provide(:title, "Edit Launche") %>
+<h1>Update Launche</h1>
 
 <%= form_for(@launche) do |f| %>
   <%= render 'shared/error_messages' %>
@@ -16,7 +16,7 @@
   <%= f.label :total %>
   <%= f.text_field :total %> <br />
 
-  <%= f.submit "Create launche" %>
+  <%= f.submit "Save changes" %>
 <% end %>
 
 <%= link_to "All launches", launches_path %>
