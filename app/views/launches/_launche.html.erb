@@ -1,0 +1,18 @@
+<!-- <li> 
+  Data  <%#= launche.date_launche.to_s %> | 
+  Miles <%#= launche.miles.to_s %> |
+  Price <%#= launche.price.to_s %> |
+  Total <%#= launche.total.to_s %> |
+</li>
+ -->
+ <tr>
+  <td><%= link_to launche.id, launch_path(launche) %>  </td>
+  <td><%= launche.date_launche.to_s %></td>
+  <td><%= launche.miles.to_s %></td>
+  <td><%= launche.price.to_s %></td>
+  <td><%= launche.total.to_s %></td>
+  <td><%= link_to "delete", launche, method: :delete,
+                                  data: { confirm: "You sure?" } %></td>
+</tr>
+ 
+ 

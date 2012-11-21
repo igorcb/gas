@@ -3,6 +3,7 @@
 
 <h4><%= link_to "New Launches", new_launch_path %></h4>
 
+
 <table border="1">
   <thead>
     <td>ID</td>
@@ -10,16 +11,10 @@
     <td>Miles</td>
     <td>Price</td>
     <td>Total</td>
+    <td>Options</td>
   </thead>
 
-  <% @launches.each do |launch| %>
-  <tr>
-    <td><%= link_to launch.id, launch_path(launch) %>  </td>
-    <td><%= launch.date_launche.to_s %></td>
-    <td><%= launch.miles.to_s %></td>
-    <td><%= launch.price.to_s %></td>
-    <td><%= launch.total.to_s %></td>
-  </tr>
-  <% end %>
+  <%= render @launches %>
+  
 </table>
 

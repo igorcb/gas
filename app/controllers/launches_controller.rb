@@ -36,4 +36,11 @@ class LaunchesController < ApplicationController
     end
   end
 
+  def destroy
+    @launche = Launche.find(params[:id])
+    @launche.destroy
+    flash[:success] = "Launche destroyed."
+    redirect_to launches_path
+  end
+
 end

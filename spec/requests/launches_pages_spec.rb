@@ -25,6 +25,14 @@ describe "Launches Pages" do
         page.should have_selector('td', text: launche.total.to_s)
       end
     end
+
+    describe "delete links" do
+      it { should have_link('delete', href: launch_path(Launche.first)) }
+
+      it "should be able to delete launch" do
+        expect { click_link('delete') }.to change(Launche, :count).by(-1)
+      end
+    end
   end
 
   describe "show" do
@@ -78,7 +86,7 @@ describe "Launches Pages" do
 
         # it { should have_selector('title', text: "Launche") }
         # it { should have_selector('h1', text: "Launche") }
-        # it { should have_selector('div.alert.alert-success', text: "created") }
+        it { should have_selector('div.alert.alert-success', text: "created") }
         # it { should have_selector('p', text: 'Date:' ) }
         # it { should have_selector('p', text: launche.date_launche.to_s ) }
         # it { should have_selector('p', text: 'Miles:' ) }
