@@ -20,7 +20,7 @@ class LaunchesController < ApplicationController
     @launche = Launche.new(params[:launche])
     if @launche.save
       flash[:success] = "Launche was successfully created.."
-      redirect_to @launche 
+      redirect_to launches_path
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class LaunchesController < ApplicationController
     @launche = Launche.find(params[:id])
     if @launche.update_attributes(params[:launche])
       flash[:success] = "Launche was successfully updated.."
-      redirect_to @launche 
+      redirect_to launches_path
     else
       render 'edit'
     end

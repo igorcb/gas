@@ -1,6 +1,8 @@
 <% provide(:title, "Edit Launche") %>
 <h1>Update Launche</h1>
 
+<h4><%= link_to "All launches", launches_path %><h4>
+
 <%= form_for(@launche) do |f| %>
   <%= render 'shared/error_messages' %>
 
@@ -18,5 +20,3 @@
 
   <%= f.submit "Save changes" %>
 <% end %>
-
-<%= link_to "All launches", launches_path %>

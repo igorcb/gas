@@ -42,6 +42,8 @@ describe "Launches Pages" do
     it { should have_selector('p', text: launche.price.to_s ) }
     it { should have_selector('p', text: 'Total:' ) }
     it { should have_selector('p', text: launche.total.to_s ) }
+
+    it { should have_link('All launche', href: launches_path )}
   end
 
   describe "new" do
@@ -74,17 +76,25 @@ describe "Launches Pages" do
         #let(:launche) { Launche.find_by_date_launche_and_miles(time, 1000) }
         let(:launche) { Launche.last }
 
-        it { should have_selector('title', text: "Launche") }
-        it { should have_selector('h1', text: "Launche") }
-        it { should have_selector('div.alert.alert-success', text: "created") }
-        it { should have_selector('p', text: 'Date:' ) }
-        it { should have_selector('p', text: launche.date_launche.to_s ) }
-        it { should have_selector('p', text: 'Miles:' ) }
-        it { should have_selector('p', text: launche.miles.to_s ) }
-        it { should have_selector('p', text: 'Price:' ) }
-        it { should have_selector('p', text: launche.price.to_s ) }
-        it { should have_selector('p', text: 'Total:' ) }
-        it { should have_selector('p', text: launche.total.to_s ) }
+        # it { should have_selector('title', text: "Launche") }
+        # it { should have_selector('h1', text: "Launche") }
+        # it { should have_selector('div.alert.alert-success', text: "created") }
+        # it { should have_selector('p', text: 'Date:' ) }
+        # it { should have_selector('p', text: launche.date_launche.to_s ) }
+        # it { should have_selector('p', text: 'Miles:' ) }
+        # it { should have_selector('p', text: launche.miles.to_s ) }
+        # it { should have_selector('p', text: 'Price:' ) }
+        # it { should have_selector('p', text: launche.price.to_s ) }
+        # it { should have_selector('p', text: 'Total:' ) }
+        # it { should have_selector('p', text: launche.total.to_s ) }
+        it "should list each launches" do
+          Launche.all.each do |launche|
+            page.should have_selector('td', text: launche.date_launche.to_s)
+            page.should have_selector('td', text: launche.miles.to_s)
+            page.should have_selector('td', text: launche.price.to_s)
+            page.should have_selector('td', text: launche.total.to_s)
+          end
+        end
       end
     end
   end 

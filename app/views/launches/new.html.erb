@@ -1,6 +1,8 @@
 <% provide(:title, 'New Launche') %>
 <h1>New Launche</h1>
 
+<h4><%= link_to "All launches", launches_path %><h4>
+
 <%= form_for(@launche) do |f| %>
   <%= render 'shared/error_messages' %>
 
@@ -19,4 +21,3 @@
   <%= f.submit "Create launche" %>
 <% end %>
 
-<%= link_to "All launches", launches_path %>

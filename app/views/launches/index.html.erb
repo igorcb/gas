@@ -5,18 +5,20 @@
 
 <table border="1">
   <thead>
+    <td>ID</td>
     <td>Data</td>
     <td>Miles</td>
     <td>Price</td>
     <td>Total</td>
   </thead>
 
-  <% @launches.each do |launches| %>
+  <% @launches.each do |launch| %>
   <tr>
-    <td><%= launches.date_launche.to_s %></td>
-    <td><%= launches.miles.to_s %></td>
-    <td><%= launches.price.to_s %></td>
-    <td><%= launches.total.to_s %></td>
+    <td><%= link_to launch.id, launch_path(launch) %>  </td>
+    <td><%= launch.date_launche.to_s %></td>
+    <td><%= launch.miles.to_s %></td>
+    <td><%= launch.price.to_s %></td>
+    <td><%= launch.total.to_s %></td>
   </tr>
   <% end %>
 </table>
