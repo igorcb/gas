@@ -1,7 +1,7 @@
 class LaunchesController < ApplicationController
   
   def index
-    @launches = Launche.all
+    @launches = Launche.order('id desc')
   end
 
   def show
