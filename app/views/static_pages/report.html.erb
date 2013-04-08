@@ -1,0 +1,28 @@
+<% provide(:title, 'Report') %>
+
+<h1>Report</h1>
+
+  <%= select_year(Date.today, :start_year => 2012) %>
+
+  <%= select_month(Date.today, :use_month_numbers => true) %>
+
+  <%= link_to "Find", :action => "report" %>
+
+
+<table>
+	<thead>
+		<th>Year</th>
+		<th>Miles</th>
+		<th>Total</th>
+	</thead>
+    <% @launches.each do |year| %>
+    <tr>
+    	<td><%= link_to year.date_part, :action => "listing_launches_per_year", :id => year.date_part %> </td>
+   	
+    	<td><%= Launche.miles_travel_year(year.date_part) %></td>
+    	<td><%= Launche.total_launche_year(year.date_part) %></td>
+    </tr>
+
+    <% end %>
+</table>  
+

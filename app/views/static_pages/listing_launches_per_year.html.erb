@@ -1,0 +1,22 @@
+<h3><%= params[:id] %></h3>
+
+<table>
+	<thead>
+		<th>Month</th>
+		<th>Miles</th>
+		<th>Total</th>
+	</thead>
+
+   <% @launches.sort.each do |launche|  %>
+
+   <tr>
+
+     <td> <%= launche[0].to_s %></td>
+     <td> <%= Launche.miles_travel_year_and_month(params[:id], launche[0]) %></td>
+     <td> <%= launche[1] %></td>
+
+   </tr>
+   <% end %>
+</table>
+
+<%= link_to "back", '/report' %>
