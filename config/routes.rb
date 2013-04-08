@@ -1,5 +1,8 @@
 Gas::Application.routes.draw do
-  #get "launches/show"
+  match '/report', to: 'static_pages#report'
+
+  get "static_pages/listing_launches"
+  match '/listing_launches_per_year', :controller=>'static_pages', :action => 'listing_launches_per_year'
   resources :launches
 
   root :to => 'launches#new'
