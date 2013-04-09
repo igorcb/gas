@@ -69,7 +69,10 @@ describe "Launches Pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Date",  with: time
+        #fill_in "Date",  with: time
+        have_date_select "#{Time.now.year}", :from => "Date"
+        have_date_select "#{Time.now.month}", :from => "month"
+        have_date_select "#{Time.now}", :from => "day"
         fill_in "Miles", with: 1000
         fill_in "Price", with: 2.69
         fill_in "Total", with: 50.00
