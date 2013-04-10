@@ -1,22 +1,2 @@
 <% provide(:title, "Edit Launche") %>
-<h1>Update Launche</h1>
-
-<h4><%= link_to "All launches", launches_path %><h4>
-
-<%= form_for(@launche) do |f| %>
-  <%= render 'shared/error_messages' %>
-
-  <%= f.label :date_launche, "Date" %>
-  <%= f.text_field :date_launche %> <br />
-
-  <%= f.label :miles %>
-  <%= f.text_field :miles %> <br />
-
-  <%= f.label :price %>
-  <%= f.text_field :price %>  <br />
-
-  <%= f.label :total %>
-  <%= f.text_field :total %> <br />
-
-  <%= f.submit "Save changes" %>
-<% end %>
+<%= render :partial => 'form' %>

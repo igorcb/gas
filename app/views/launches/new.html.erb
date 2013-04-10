@@ -1,23 +1,2 @@
 <% provide(:title, 'New Launche') %>
-<h1>New Launche</h1>
-
-<h4><%= link_to "All launches", launches_path %><h4>
-
-<%= form_for(@launche) do |f| %>
-  <%= render 'shared/error_messages' %>
-
-  <%= f.label :date_launche, "Date" %>
-  <%= f.date_select :date_launche %> <br />
-
-  <%= f.label :miles %>
-  <%= f.number_field :miles %> <br />
-
-  <%= f.label :total %>
-  <%= f.text_field :total %> <br />
-
-  <%= f.label :price %>
-  <%= f.text_field :price %>  <br />
-
-  <%= f.submit "Create launche" %>
-<% end %>
-
+<%= render :partial => 'form' %>
